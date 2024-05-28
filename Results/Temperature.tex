@@ -1,0 +1,48 @@
+\subsection{Temperature}
+\label{sec:results_temperature}
+These are the results of our temperature measurement feature. Range from 5$^\circ$C - 40$^\circ$C. This was achieved with the Vötsch VT 7004 programmable temperature chamber and the calibrated thermometer Fluke t3000 FC as reference.
+
+\begin{figure}[hbt!]
+    \centering
+
+    \begin{tikzpicture}
+
+    \begin{axis}[legend style={at={(0.95, 0.09)},anchor=south east}, width=\linewidth, height=6cm,
+        title = {Temperature},
+        xlabel = {Target [$^\circ$C]},
+        ylabel = {Measured [$^\circ$C]}]
+        \addplot[blue, mark=*] table {Results/TempData/tempDataCal.dat};
+        \addlegendentry{Calibrated}
+        \addplot[red, mark=*] table {Results/TempData/tempDataTM.dat};
+        \addlegendentry{Thermometer}
+    \end{axis}
+
+    \end{tikzpicture}
+
+    \caption{Comparing the results between our thermometer and the calibrated one}
+    \label{fig:tempGraph}
+    
+\end{figure}
+
+\noindent The sensor achieves a pretty linear performance, seen in Figure \ref{fig:tempGraph} - almost on par with the calibrated thermometer. Some offsets could be coded to increase accuracy.
+
+\begin{figure}[h]
+    \centering
+
+    \begin{tikzpicture}
+
+    \begin{axis}[legend style={at={(0.95, 0.8)},anchor=south east}, width=\linewidth, height=4cm,
+        title = {Percentage deviation, temperature},
+        xlabel = {Target [$^\circ$C]},
+        ylabel = {Percentage [\%]}]
+        \addplot[red, mark=*] table {Results/TempData/tempDataDiff.dat};
+    \end{axis}
+
+    \end{tikzpicture}
+
+    \caption{The percentage difference from calibrated value and measured}
+    \label{fig:tempGraphDiff}
+    
+\end{figure}
+
+\noindent Figure \ref{fig:tempGraphDiff} shows a percentage swinging between 4.7\% and 15.3\%. Since the LM35 is attached to the PCB, thus having a larger mass to heat up, and the thermometer was hanging in the air, it was necessary to wait 15 minutes per 5-degree interval. Hence, this can create an offset between ambient and PCB. See Figure \ref{fig:TM1} and \ref{fig:TM2} for test setup.

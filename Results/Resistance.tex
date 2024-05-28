@@ -1,0 +1,38 @@
+\subsection{Resistance}
+\label{sec:results_resistance}
+These are the results for our resistance measurement feature. \\ Range from 10$\Omega$ - 3M$\Omega$.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[legend style={at={(0.95, 0.09)},anchor=south east}, width=\linewidth, height=6cm,
+        title = {Resistance Measurement},
+        xlabel = {Target [$\Omega$]},
+        ylabel = {Measured [$\Omega$]}]
+        \addplot[blue, mark=*] table {Results/ResData/resDataCal.dat};
+        \addlegendentry{Calibrated}
+        \addplot[red, mark=*] table {Results/ResData/resDataMeter.dat};
+        \addlegendentry{Ohmmeter}
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Comparing the results between our ohmmeter and the calibrated one}
+    \label{fig:resGraph}
+\end{figure}
+
+\noindent The graph in Figure \ref{fig:resGraph} shows two plots. The calibrated one refers to a Keysight 34461A Digital Multimeter that was calibrated in 2023 by Trescal, while the other refers to our own ohmmeter in the multimeter. The same leads were used throughout.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[legend style={at={(0.95, 0.09)},anchor=south east}, width=\linewidth, height=4cm,
+        title = {Percentage deviation, resistance},
+        xlabel = {Target [$\Omega$]},
+        ylabel = {Percentage [\%]}]
+        \addplot[red, mark=*] table {Results/ResData/resDiff.dat};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{The percentage difference from calibrated value and measured}
+    \label{fig:resGraphDiff}
+\end{figure}
+
+\noindent Seen in Figure \ref{fig:resGraphDiff}, the deviation of the measured values increases greatly between our set reference resistors.
+\FloatBarrier

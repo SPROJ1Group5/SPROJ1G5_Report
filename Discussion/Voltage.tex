@@ -1,0 +1,15 @@
+\subsection{Voltage}
+\label{sec:discussion_voltage}
+
+\subsubsection{Reflection}
+Many possible improvements could be made to the voltage section of our multimeter.
+For example:
+\begin{itemize}
+    \item Allowing for negative voltages.
+    \item Increasing the number of ranges to extend the capabilities of our ADC further.
+    \item Switching to a higher resolution ADC.
+\end{itemize}
+
+\subsubsection{Future Improvements}
+For improved performance, we would choose a split rail power supply.
+It would greatly improve our possibilities of how to design the analog section of the board. even with the current design, it would have an impact. It would remove the DC offset that comes with amplification using an OP-AMP. When it comes to the voltage measurement there is also the fact that we are still using an internal ADC and voltage reference. For better stability, we should use the voltage reference. However, it may not pose so many problems due to us using only a 10-bit ADC. A far better improvement would be switching to a higher resolution external ADC and then also including a proper voltage reference. Without that, it may be not a very useful improvement. Another problem to tackle is the input impedance, with our current prototype we selected some generic values that fit the proof of concept. This should be increased into mega-ohm range. Current OP-AMPs allow us to go only up to $1.5M\Omega$. That is because the inputs of the amplifier require at least 250nA to operate correctly. Thus to increase the impedance we would need to change it to a different one that has a lower input current.

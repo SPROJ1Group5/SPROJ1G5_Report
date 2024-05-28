@@ -1,0 +1,8 @@
+\subsection{Temperature}
+\label{sec:discussion_temperature}
+
+\subsubsection{Reflection}
+The current temperature implementation uses a sensor inside the multimeter. Due to a limited amount of pins on the ATMEGA328p microcontroller, we chose an analog sensor. This uses only one pin on the microcontroller. However, when it comes to its resolution it has the limitation of using the internal ADC.
+
+\subsubsection{Future improvements}
+For future improvements regarding the temperature capabilities of our multimeter, we would like to make it capable of using an external temperature sensor. It would be based on a thermistor. This is so that we can reuse the existing hardware in our multimeter to perform the measurement. The fact that our banana jacks are spaced in a standardized manner allows us to use any industry standard probe or module. On the other hand regarding the internal temperature sensor, there are a couple of possible improvements there as well. We Want to rework the circuit to allow the measurement of negative temperatures. For improved resolution we could measure the sensor using a higher resolution ADC or, we could switch to a digital temperature sensor which would also potentially decrease noise.

@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepackage{placeins}
+\usepackage{titlepic}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+
+\title{SPROJ1 Group 5}
+\author{Michał Sulej, Bence Tóth, \\Theodor Erbs Dam Hansen, Danial Jeddi}
+\date{\parbox{\linewidth}{\centering%
+  January $2^{\text{nd}}$ 2024\endgraf\bigskip
+  Assoc. Prof. Luciana Tavares \hspace*{1cm} Assoc. Prof. Oliver Niebuhr\endgraf\vspace{3mm}
+  Mentor\ Mikkel B. Mogensen \endgraf\vspace{6mm}
+  University of Southern Denmark}}
+
+\titlepic{\includegraphics[width=0.95\textwidth]{images/SPROJ1_Rend.png}}
+
+\pagestyle{fancy}
+% \fancyhf{} % clear existing header/footer entries
+% \renewcommand{\headrulewidth}{0pt}
+% Place Page X of Y on the right-hand
+% side of the footer
+\fancyfoot[C]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\begin{document}
+
+\maketitle
+
+\label{sec:tableofcontents}
+\tableofcontents
+\input{Contact}
+\newpage
+
+\input{abstract}
+\input{introduction}
+\input{methods}
+\input{results}
+\input{discussion}
+\input{conclusion}
+\input{appendix}
+\include{references}
+\include{Responsibilities}
+
+\end{document}

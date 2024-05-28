@@ -1,0 +1,8 @@
+\subsection{Continuity test}
+\label{sec:method_continuity}
+
+\subsubsection{Idea}
+Most digital multimeters on the market come with an option to measure the continuity of the circuit, i.e. whether the measured trace is intact or not. This type of measurement comes in handy while troubleshooting a PCB, as there could be traces that are damaged, hence not making a proper contact, causing the circuit to not function as it is intended. For this measurement the resistance circuit is used, which has been previously discussed. 
+
+\subsubsection{Code implementation}
+The continuity test uses the same method as the resistance measurement, but here the selected range is fixed to be the one containing the 100$\Omega$ resistor. After the value of the resistance is calculated using the aforementioned formula, this value is compared to the maximum allowed value of 10$\Omega$. If the calculated value is below this threshold, the piezoelectric buzzer is activated using the built-in Arduino function \textit{tone}, which produces a square wave signal at a chosen frequency of 1kHz. In this case, the value of the resistance is displayed on the LCD screen as well.

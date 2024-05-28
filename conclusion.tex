@@ -1,0 +1,26 @@
+% \newpage
+\section{Conclusion}
+\label{sec:conclusion}
+In the end, we achieved our goal of measuring voltage, current, frequency, temperature, and resistance. Our final product is capable of measuring DC voltage from 0 to 20V, current from 0 to 5A, and frequency from 25Hz up to 100kHz. The temperature measurement limits are as specified in the LM35 datasheet. The resistance section has a range of 0$\Omega$ - 3M$\Omega$. The whole development went smoothly, we progressed rapidly with multiple phases along the way. The first phase was the initial design, where we came up with ideas on how to tackle the requirements. After the initial design, we ordered the required parts, and when they arrived, we moved on to prototyping using breadboards. When the prototypes worked successfully, we moved on to combining all of our designs into one single schematic and ordered a PCB from JLCPCB. Later on, while soldering the PCB, we found multiple problems in the design. We spent some time diagnosing and fixing them. After we worked out what didn't work, we revised our schematic and ordered a second version of our PCB. That is the current and final version of our multimeter project that can be viewed by the link available in Resources, titled video showcase. 
+\vspace{2cm}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+    \hline
+        \textbf{Feature} & \textbf{Range} & \textbf{Accuracy $\pm$} & \textbf{Unit}\\
+        \hline
+        Voltmeter & 0-20 & 2\% & V\\
+        \hline
+        Ammeter & 0-5 & 6\% & A\\
+        \hline
+        Ohmmeter & 0-3M & 22\% & $\Omega$ \\
+        \hline
+        Thermometer & 5-40 & 15\% & $^{\circ}$C \\
+        \hline
+        Frequency meter & 25-100k & 5\% & Hz\\
+        \hline
+    \end{tabular}
+    \caption{Final measurement capabilities}
+    \label{tab:features}
+\end{table}

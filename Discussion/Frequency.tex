@@ -1,0 +1,8 @@
+\subsection{Frequency}
+\label{sec:discussion_frequency}
+
+\subsubsection{Reflection}
+There are some limiting factors regarding the method used to measure frequency. First of all, the clock speed of the MCU used could be a decisive bottleneck, as the \textit{pulseIn} function internally relies on the clock cycle.
+
+\subsubsection{Future improvements}
+To make our current design more precise at greater frequencies, using a faster MCU and Schmitt trigger could definitely make a substantial difference. Furthermore, we could improve our design by implementing an auto-ranging function, which would select the appropriate flip-flop array in order to lower the input frequency, limiting it to be below 100kHz, thus limiting the error of measurement to be a maximum of $\pm$5\% at a greater frequency scale. Another improvement would be to use a BNC connector as an input instead of banana plugs. This would improve user experience, as these connectors are industry-standard.

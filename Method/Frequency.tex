@@ -1,0 +1,9 @@
+\subsection{Frequency measurement}
+\label{sec:method_frequency}
+
+\subsubsection{Idea}
+From the beginning, we thought about measuring not only square-wave signals, but triangle, saw-tooth, and any other type of signal, as long as they have a single dominant frequency. For this reason, we opted to use a \textit{SN74HC14} Schmitt-trigger inverter to convert any type of signal to a square wave, which can be directly read by the GPIO pin of the Arduino microcontroller. Using a 5V Zener diode as a clamping diode for the input of the Schmitt-trigger. To further improve the capabilities of our frequency front-end, we used a capacitor to AC couple the input, thus removing its DC offset. Next we set our own offset right at the switching point of the Schmitt-trigger. By doing this we decreased the minimum amplitude that the input signal has to have. When it comes to the frequency measurement capabilities we found that the lower limit of this method seems to be around 25Hz, while the upper limit is around 100 kHz, with a maximum allowed error of $\pm$5\% taken into consideration.
+The schematic for the frequency measurement can be seen in section \ref{sec:appendix}. See the full schematic, in block 9.
+
+\subsubsection{Code implementation}
+The method for measuring frequency is based on the built-in Arduino function called \textit{pulseIn}. This function returns the amount of time it took (in microseconds) for the voltage at the specified input pin to go from either HIGH to LOW or from LOW to HIGH level. By measuring both scenarios we get the whole period of the signal. We can calculate the frequency by taking the reciprocal of the sum of these two timeouts given by the \textit{pulseIn} function.

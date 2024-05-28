@@ -1,0 +1,48 @@
+\subsection{Current}
+\label{sec:results_current}
+These are the results for our current measurement feature. \\ Range from 100 mA - 5 A. To draw the desired current, we used the Tenma 72-13200 Electronic DC Load.
+
+\begin{figure}[hbt!]
+    \centering
+
+    \begin{tikzpicture}
+
+    \begin{axis}[legend style={at={(0.95, 0.09)},anchor=south east}, width=\linewidth, height=6cm,
+        title = {Current},
+        xlabel = {Target [A]},
+        ylabel = {Measured [A]}]
+        \addplot[blue, mark=*] table {Results/CurrData/currentDataCal.dat};
+        \addlegendentry{Calibrated}
+        \addplot[red, mark=*] table {Results/CurrData/currentDataAM.dat};
+        \addlegendentry{Ammeter}
+    \end{axis}
+
+    \end{tikzpicture}
+
+    \caption{Comparing the results between our ammeter and the calibrated one}
+    \label{fig:currGraph}
+    
+\end{figure}
+\noindent The graph in Figure \ref{fig:currGraph} shows two plots. The calibrated one refers to a Keysight 34461A Digital Multimeter that was calibrated in 2023 by Trescal, while the other refers to our ammeter in the multimeter.
+
+\begin{figure}[h]
+    \centering
+
+    \begin{tikzpicture}
+
+    \begin{axis}[legend style={at={(0.95, 0.8)},anchor=south east}, width=\linewidth, height=4cm,
+        title = {Percentage deviation, current},
+        xlabel = {Target [A]},
+        ylabel = {Percentage [\%]}]
+        \addplot[red, mark=*] table {Results/CurrData/currDataDiff.dat};
+    \end{axis}
+
+    \end{tikzpicture}
+
+    \caption{The percentage difference from calibrated value and measured}
+    \label{fig:currGraphDiff}
+    
+\end{figure}
+
+\noindent With Figure \ref{fig:currGraphDiff}, the uncertainty of the lower currents is apparent, where the larger currents are more precise. See Figure \ref{fig:CM1} and \ref{fig:CM2} for test setup.
+\FloatBarrier

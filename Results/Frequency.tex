@@ -1,0 +1,38 @@
+\subsection{Frequency}
+\label{sec:results_frequency}
+These are our results for the frequency measurement. Although multiple signal wave forms were tested, the signal in the displayed data was a sine-wave, supplied by a Tektronix AFG1022 function generator. The frequency displayed by our multimeter was compared to the value displayed by a Tektronix MSO 2014 Mixed Signal Oscilloscope calibrated in 2023 by Trescal.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[legend style={at={(0.95, 0.09)},anchor=south east}, width=\linewidth, height=6cm,
+        title = {Frequency Measurement},
+        xlabel = {Target [Hz]},
+        ylabel = {Measured [Hz]}]
+        \addplot[blue, mark=*] table {Results/FreqData/freqDataCal.dat};
+        \addlegendentry{Calibrated}
+        \addplot[red, mark=*] table {Results/FreqData/freqDataFM.dat};
+        \addlegendentry{Freqmeter}
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Comparing the results between our frequency meter and the calibrated oscilloscope}
+    \label{fig:freqGraph}
+    
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[legend style={at={(0.95, 0.8)},anchor=south east}, width=\linewidth, height=4cm,
+        title = {Percentage deviation, frequency},
+        xlabel = {Target [Hz]},
+        ylabel = {Percentage [\%]}]
+        \addplot[red, mark=*] table {Results/FreqData/freqDataErr.dat};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{The percentage difference from calibrated value and measured}
+    \label{fig:freqGraphDiff}
+\end{figure}
+
+As seen from Figures \ref{fig:freqGraph} and \ref{fig:freqGraphDiff}, the measurement errors start to drastically increase above 100kHz. We encounter the maximum allowed error of $\pm$5\% at around 100kHz mark, so this is the upper limit of our device. As for the lower limit, during testing we found out that below 25Hz the displayed value starts to differ by quite a large margin. With these results in mind, we advise to limit the use of this frequency meter to be in the interval of 25Hz - 100kHz, in order for the displayed value to be adequately true to the real value.
+\FloatBarrier

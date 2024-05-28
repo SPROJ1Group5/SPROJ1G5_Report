@@ -1,0 +1,10 @@
+\subsection{Temperature measurement}
+\label{sec:method_temperature}
+This section shall describe the thought process and functionality of the temperature measurement part of the project.
+
+\subsubsection{Idea}
+The first idea for this challenge was to implement a temperature-dependent resistor with a positive temperature coefficient, PTC. This is a resistor whose resistance value will increase when the temperature does. The corresponding voltage across the resistor will change as well, thus making it possible to measure the temperature that way, since we know what its value is at a certain temperature, it can be calculated from said voltage.
+Another solution would be a dedicated IC that has built-in stabilization and better-known and documented properties. This would also speed up calibration time and decrease implementation difficulties.
+
+\subsubsection{Implementation}
+We settled with the idea of an IC, just to speed up the research and development. The IC of choice landed on the \textit{LM35}, which has an analogue output that corresponds to its current temperature. Time was running short, so we included it in a very basic form, to be expanded in some future feature work-over. The code we ended up writing was heavily inspired by the LM35 library seen in section \ref{sec:references}.
